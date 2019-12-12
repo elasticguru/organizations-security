@@ -12,3 +12,31 @@ variable "environment_type" {
   default     = ""
 }
 
+variable "iam_pgp_key" {
+  default = "keybase:berahac"
+}
+
+variable "superadmin_user_list" {
+  type    = list(object({
+    name = string,
+    has_api_key = bool
+  }))
+  default = []
+}
+
+variable "plainadmin_user_list" {
+  type    = list(object({
+    name = string,
+    has_api_key = bool
+  }))
+  default = []
+}
+
+variable "sysadmin_user_list" {
+  type    = list(object({
+    name = string,
+    has_api_key = bool
+  }))
+  default = []
+}
+
